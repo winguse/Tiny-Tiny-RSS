@@ -2930,7 +2930,7 @@
 			}
 		}
 
-		$res = $doc->saveHTML();
+		$res = html_entity_decode($doc->saveHTML(), ENT_QUOTES, 'utf-8');
 
 		return $res;
 	}
