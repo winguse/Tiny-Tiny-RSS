@@ -103,7 +103,7 @@ class Handler_Public extends Handler {
 							"/public.php?url=" . urlencode($line['link'])), true);
 				$tpl->setVariable('ARTICLE_LINK', htmlspecialchars($line['link']), true);
 				$tpl->setVariable('ARTICLE_TITLE', htmlspecialchars($line['title']), true);
-				$tpl->setVariable('ARTICLE_EXCERPT', $line["content_preview"], true);
+				$tpl->setVariable('ARTICLE_EXCERPT', sanitize($line["content_preview"], false, $owner_uid), true);
 
 				$content = sanitize($line["content"], false, $owner_uid);
 
